@@ -12,12 +12,15 @@
   <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-database.js"></script>
   <script src="assets/scripts/app.js"></script>
   <script>
+	  console.log("entered the script");
     window.addEventListener("load", getData(genFunction));
 
     function getData(callbackIN) {
       var ref = firebase.database().ref("coordinates");
       ref.once('value').then(function (snapshot) {
         callbackIN(snapshot.val())
+	
+	  console.log("entered the snapshot");	      
       });
     }
 
@@ -113,7 +116,7 @@
 
     var firebaseChart1 = new FusionCharts({
         type: 'area2d',
-        renderAt: 'chart-container',
+        renderAt: 'chart-container1',
         width: '650',
         height: '400',
         dataFormat: 'json',
