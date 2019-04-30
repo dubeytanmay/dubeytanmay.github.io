@@ -24,17 +24,17 @@
       });
     }
 
-    function genFunction(data) {
-	    console.log("entered the genfunc "+data);
+    function genFunction(coordinates) {
+	    console.log("entered the genfunc "+coordinates);
       var cdata = [];
-      var len = data.length;
+      var len = coordinates.length;
 	    console.log("len o data "+len);
       for(var i=1; i<len; i++) {
         cdata.push({
-          label: data[i]['timestam'],
-          value: data[i]['x_cood']
+          label: coordinates[i]['timestam'],
+          value: coordinates[i]['x_cood']
         });
-	      	  console.log("entered the loop "+data[i]['timestam']);
+	      	  console.log("entered the loop "+coordinates[i]['timestam']);
 
       }
 
@@ -107,13 +107,13 @@
       });
     }
 
-    function genFunction1(data) {
+    function genFunction1(coordinates) {
       var cdata = [];
-      var len = data.length;
+      var len = coordinates.length;
       for(var i=1; i<len; i++) {
         cdata.push({
-          label: data[i]['timestam'],
-          value: data[i]['y_cood']
+          label: coordinates[i]['timestam'],
+          value: coordinates[i]['y_cood']
         });
       }
 
@@ -186,13 +186,13 @@
       });
     }
 
-    function genFunction2(data) {
+    function genFunction2(coordinates) {
       var cdata = [];
-      var len = data.length;
+      var len = coordinates.length;
       for(var i=1; i<len; i++) {
         cdata.push({
-          label: data[i]['timestam'],
-          value: data[i]['z_cood']
+          label: coordinates[i]['timestam'],
+          value: coordinates[i]['z_cood']
         });
       }
 
