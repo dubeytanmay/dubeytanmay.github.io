@@ -44,8 +44,8 @@
 		
 		
 			cdata.push({
-         		 timestam: coordinates[i]['timestam'],
-        	 	 x_cood: coordinates[i]['x_cood']
+         		 label: coordinates[i]['timestam'],
+        	 	 value: coordinates[i]['x_cood']
        			 });	
 		
 	}
@@ -122,12 +122,16 @@
     function genFunction1(coordinates) {
       var cdata = [];
       var len = coordinates.length;
-      for(var i=1; i<len; i++) {
-        cdata.push({
-          label: coordinates[i]['timestam'],
-          value: coordinates[i]['y_cood']
-        });
-      }
+      for(var i in coordinates)
+	{	
+		
+		
+			cdata.push({
+         		 label: coordinates[i]['timestam'],
+        	 	 value: coordinates[i]['y_cood']
+       			 });	
+		
+	}
 
 
     var firebaseChart1 = new FusionCharts({
@@ -201,12 +205,16 @@
     function genFunction2(coordinates) {
       var cdata = [];
       var len = coordinates.length;
-      for(var i=1; i<len; i++) {
-        cdata.push({
-          label: coordinates[i]['timestam'],
-          value: coordinates[i]['z_cood']
-        });
-      }
+      for(var i in coordinates)
+	{	
+		
+		
+			cdata.push({
+         		 label: coordinates[i]['timestam'],
+        	 	 value: coordinates[i]['x_cood']
+       			 });	
+		
+	}
 
 
     var firebaseChart2 = new FusionCharts({
