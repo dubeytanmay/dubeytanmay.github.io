@@ -25,15 +25,14 @@
     }
 
     function genFunction(coordinates) {
-	    console.log("entered the genfunc "+coordinates[-LK9Ar5UTVu6QZhT7qml]['timestam']);
       var cdata = [];
 	    
       var len = coordinates.length;
 	    console.log("len o data "+len);
       for(var i=1; i<len; i++) {
         cdata.push({
-          label: coordinates[i]['timestam'],
-          value: coordinates[i]['x_cood']
+          timestam: coordinates[i]['timestam'],
+          x_cood: coordinates[i]['x_cood']
         });
 	      	  console.log("entered the loop "+coordinates[i]['timestam']);
 
