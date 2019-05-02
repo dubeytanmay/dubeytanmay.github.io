@@ -1,4 +1,5 @@
 <!doctype html>
+
 <html>
 
 <head>
@@ -6,15 +7,13 @@
   <!-- including FusionCharts core package JS files -->
   <script src="https://static.fusioncharts.com/code/latest/fusioncharts.js"></script>
   <link rel="stylesheet" href="assets/css/main.css">
-
   <!-- including Firebase -->
   <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-database.js"></script>
   <script src="assets/scripts/app.js"></script>
   <script>
-    console.log("entered the script");
+	  console.log("entered the script");
     window.addEventListener("load", getData(genFunction));
-
     function getData(callbackIN) {
       var ref = firebase.database().ref("coordinates");
       ref.once('value').then(function (snapshot) {
@@ -23,14 +22,18 @@
 	  console.log("entered the snapshot");	      
       });
     }
-
     function genFunction(coordinates) {
       var cdata = [];
 	    console.log(JSON.stringify(coordinates));
-
       var len = Object.keys(coordinates).length;
 	    console.log("len o data "+len);
-     
+     /* for(var i=1; i<len; i++) {
+        cdata.push({
+          timestam: coordinates[i]['timestam'],
+          x_cood: coordinates[i]['x_cood']
+        });
+	      	  console.log("entered the loop "+coordinates[i]['timestam']);
+      }*/
 	    
 	for(var i in coordinates)
 	{	
@@ -42,8 +45,6 @@
        			 });	
 		
 	}
-
-
     var firebaseChart = new FusionCharts({
         type: 'area2d',
         renderAt: 'chart-container',
@@ -95,23 +96,19 @@
             "data": cdata
         }
     });
-
     firebaseChart.render();
-
 	
 	}
 	
 	
 	
 	window.addEventListener("load", getData1(genFunction1));
-
     function getData1(callbackIN) {
       var ref = firebase.database().ref("coordinates");
       ref.once('value').then(function (snapshot) {
         callbackIN(snapshot.val())
       });
     }
-
     function genFunction1(coordinates) {
       var cdata = [];
       var len = coordinates.length;
@@ -125,8 +122,6 @@
        			 });	
 		
 	}
-
-
     var firebaseChart1 = new FusionCharts({
         type: 'area2d',
         renderAt: 'chart-container1',
@@ -178,23 +173,16 @@
             "data": cdata
         }
     });
-
     firebaseChart1.render();
-
 	
 	}
-
-
-
 	window.addEventListener("load", getData2(genFunction2));
-
     function getData2(callbackIN) {
       var ref = firebase.database().ref("coordinates");
       ref.once('value').then(function (snapshot) {
         callbackIN(snapshot.val())
       });
     }
-
     function genFunction2(coordinates) {
       var cdata = [];
       var len = coordinates.length;
@@ -208,8 +196,6 @@
        			 });	
 		
 	}
-
-
     var firebaseChart2 = new FusionCharts({
         type: 'area2d',
         renderAt: 'chart-container2',
@@ -261,18 +247,11 @@
             "data": cdata
         }
     });
-
     firebaseChart2.render();
-
 	
     }
-
-	
   </script>
-	
-
 </head>
-
 <body>
   <div id="chart-container"><svg width="90px"  height="90px"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="lds-rolling" style="background: none;"><circle cx="50" cy="50" fill="none" ng-attr-stroke="{{config.color}}" ng-attr-stroke-width="{{config.width}}" ng-attr-r="{{config.radius}}" ng-attr-stroke-dasharray="{{config.dasharray}}" stroke="#6ac1a5" stroke-width="9" r="33" stroke-dasharray="155.50883635269477 53.83627878423159" transform="rotate(324 50 50)"><animateTransform attributeName="transform" type="rotate" calcMode="linear" values="0 50 50;360 50 50" keyTimes="0;1" dur="1s" begin="0s" repeatCount="indefinite"></animateTransform></circle></svg></div>
   
@@ -281,5 +260,4 @@
   <div id="chart-container2"><svg width="90px"  height="90px"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="lds-rolling" style="background: none;"><circle cx="50" cy="50" fill="none" ng-attr-stroke="{{config.color}}" ng-attr-stroke-width="{{config.width}}" ng-attr-r="{{config.radius}}" ng-attr-stroke-dasharray="{{config.dasharray}}" stroke="#6ac1a5" stroke-width="9" r="33" stroke-dasharray="155.50883635269477 53.83627878423159" transform="rotate(324 50 50)"><animateTransform attributeName="transform" type="rotate" calcMode="linear" values="0 50 50;360 50 50" keyTimes="0;1" dur="1s" begin="0s" repeatCount="indefinite"></animateTransform></circle></svg></div>
   
 </body>
-
 </html>
