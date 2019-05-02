@@ -30,14 +30,25 @@
 
       var len = Object.keys(coordinates).length;
 	    console.log("len o data "+len);
-      for(var i=1; i<len; i++) {
+     /* for(var i=1; i<len; i++) {
         cdata.push({
           timestam: coordinates[i]['timestam'],
           x_cood: coordinates[i]['x_cood']
         });
 	      	  console.log("entered the loop "+coordinates[i]['timestam']);
 
-      }
+      }*/
+	    
+	for(var i in coordinates)
+	{	
+		
+		
+			cdata.push({
+         		 timestam: coordinates[i]['timestam'],
+        	 	 x_cood: coordinates[i]['x_cood']
+       			 });	
+		
+	}
 
 
     var firebaseChart = new FusionCharts({
