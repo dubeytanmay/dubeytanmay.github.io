@@ -28,7 +28,7 @@
       var cdata = [];
 	    console.log(JSON.stringify(coordinates));
 
-      var len = coordinates.length;
+      var len = Object.keys(coordinates).length;
 	    console.log("len o data "+len);
       for(var i=1; i<len; i++) {
         cdata.push({
